@@ -70,3 +70,8 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# ジェムの追加
+gem "pry-rails"
+
+gem "devise"
