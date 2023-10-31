@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+/* paddingやborderで幅や高さが変わらないように設定 */
+ * {
+  box-sizing: border-box;
+}
