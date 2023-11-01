@@ -3,7 +3,6 @@ class RoomsController < ApplicationController
     @room = Room.new
   end
   def create
-    # binding.pry
     if Room.create(room_params)
       redirect_to root_path
     else
