@@ -15,4 +15,8 @@ class UsersController < ApplicationController
     # current_userでログイン中のレコードを抽出
     params.require(:user).permit(:name,:email)
   end
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+  end
 end
