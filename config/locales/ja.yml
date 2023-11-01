@@ -1,0 +1,5 @@
+# 時刻の設定
+ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"

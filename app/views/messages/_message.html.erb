@@ -5,7 +5,8 @@
 
     </div>
     <div class="message-date">
-      <%=message.created_at%>
+      <%# lで日本時刻設定に %>
+      <%= l message.created_at%>
 
     </div>
   </div>
