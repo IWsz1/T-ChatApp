@@ -5,4 +5,6 @@ class Room < ApplicationRecord
   has_many :messages, dependent: :destroy
   # 多対多用のアソシエーション設定+中間テーブル名の記載
   has_many :users, through: :room_users
+
+  validates :name,presence:true
 end
