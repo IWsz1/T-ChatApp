@@ -7,7 +7,7 @@
   <%Room.all.each do |room|%>
     <div class="room">
       <div class="room-name">
-        <a href="#"><%=room.name%></a>
+        <%= link_to room.name,room_messages_path(room.id) %>
       </div>
     </div>
   <%end%>

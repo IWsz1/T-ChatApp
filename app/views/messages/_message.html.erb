@@ -1,0 +1,19 @@
+<div class="message">
+  <div class="upper-message">
+    <div class="message-user">
+      <%=message.user.name%>
+
+    </div>
+    <div class="message-date">
+      <%# lで日本時刻設定に %>
+      <%= l message.created_at%>
+
+    </div>
+  </div>
+  <div class="lower-message">
+    <div class="message-content">
+      <%=message.content%>
+
+    </div>
+  </div>
+</div>
