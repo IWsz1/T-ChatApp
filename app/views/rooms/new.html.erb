@@ -1,0 +1,40 @@
+<div class='chat-room-form'>
+  <h1>新規チャットルーム</h1>
+  <%=form_with model: @room, local: true do |f|%>
+    <div class='chat-room-form__field'>
+      <div class='chat-room-form__field--left'>
+        <%= f.label :name, :チャットルーム名, class: 'chat-room-form__label'%>
+      </div>
+      <div class='chat-room-form__field--right'>
+        <%= f.text_field :name, class: 'chat__room_name chat-room-form__input', placeholder: 'チャットルーム名を入力してください'%>
+      </div>
+    </div>
+    <div class='chat-room-form__field'>
+    </div>
+    <div class='chat-room-form__field'>
+      <div class='chat-room-form__field--left'>
+        <label class='chat-room-form__label' for='chat_room_チャットメンバー'>チャットメンバー</label>
+      </div>
+      <div class='chat-room-form__field--right'>
+        <%# paramsのフォーム送信情報が送られるroomのパラメータにuser_idsというハッシュを追加 またその中に複数のユーザーidを格納するためリストマークを記述%>
+        <select name="room[user_ids][]">
+          <option>チャットするユーザーを選択してください</option>
+          <%# current_user以外のレコードを取得 %>
+          <% User.where.not(id: current_user.id).each do |user| %>
+            <%# value設定を用いて選択されたユーザーのidをparamsのuser_idsに格納 %>
+            <option value=<%=user.id%>><%= user.name %></option>
+          <% end %>
+        </select>
+        <%# hiddenで表示は隠す　current_userのidをuser_idsに格納 %>
+        <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>
+      </div>
+    </div>
+    <div class='chat-room-form__field'>
+      <div class='chat-room-form__field--left'></div>
+      <div class='chat-room-form__field--right'>
+        <%# ボタンに表記する文言を指定しないとアクション名＋ルーム名のボタン表記になる　例:Create Room %>
+        <%= f.submit class: 'chat-room-form__action-btn'%>
+      </div>
+    </div>
+  <% end %>
+</div>
