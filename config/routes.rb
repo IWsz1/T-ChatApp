@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   resources :users do
   end
   resources :rooms do
+    resources :messages do
+    end
   end
 end
