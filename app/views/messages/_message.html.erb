@@ -13,7 +13,9 @@
   <div class="lower-message">
     <div class="message-content">
       <%=message.content%>
-
     </div>
+    <%# 画像が存在したら読み込む %>
+    <%# 500*500のサイズに編集して表示 %>
+    <%= image_tag message.image.variant(resize:'500x500'), class: 'message-image' if message.image.attached? %>
   </div>
 </div>
