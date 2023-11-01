@@ -7,7 +7,9 @@
     <div class="message-date">
       <%# lで日本時刻設定に %>
       <%= l message.created_at%>
-
+    </div>
+    <div>
+      <%= link_to "削除", room_message_path(@room.id,message.id), class: 'btn',data: { turbo_method: :delete }%>
     </div>
   </div>
   <div class="lower-message">

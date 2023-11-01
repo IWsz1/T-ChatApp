@@ -16,6 +16,12 @@ class MessagesController < ApplicationController
       render :index, status: :unprocessable_entity
     end
   end
+  def destroy
+    @message = Message.find(params[:id])
+    if @message.destroy
+      redirect_to room_messages_path(@message.room.id)
+    end
+  end
   private
 
   def message_params

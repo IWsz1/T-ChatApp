@@ -113,6 +113,17 @@
   padding-left: 10px;
 }
 
+.upper-message .btn{
+  text-decoration: none;
+  color: rgb(249, 248, 248);
+  border: 1px solid darkred;
+  background-color: darkred;
+  border-radius: 20%;
+  font-size: 12px;
+  margin: 6px 6px 6px 12px;
+  padding: 2px 4px;
+}
+
 .lower-message {
   margin-top: 10px;
 }
